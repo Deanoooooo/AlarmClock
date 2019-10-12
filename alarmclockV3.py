@@ -8,9 +8,9 @@ from datetime import datetime
 import time
 
 # Morning (6-8), Early (9-11), Day (12-4), Late(5-7), Evening(8-10), Night(11-5)
-#      (6-8)         (9-11)       (12-16)   (17-19)        (20-22)     (23-5)
-#  #707fd1         #5162c6       #3b4db1    #314091     #273270        #1d2450
- 
+#      (6-8)         (9-11)      (12-16)    (17-19)      (20-22)       (23-5)
+#     #707fd1       #5162c6      #3b4db1    #314091     #273270       #1d2450
+  
 root = Tk()
 root.attributes('-fullscreen', True)
 root.configure(background='#263238')
@@ -31,15 +31,17 @@ def filler():
 
 
 (t, md) = getTimeAndDate()
-T= StringVar()
-MD= StringVar()
+T=StringVar()
+MD=StringVar()
 T.set(t)
 MD.set(md)
 displayTime =  Label(root, textvariable=T, font=("Verdana",112), fg="#e6e6e6", bg="#e6e6e6")
 displayDay = Label(root, textvariable=MD, font=("Verdana",60), fg="#e6e6e6", bg="#e6e6e6")
+displayTime.pack()
+displayDay.pack()
 
-displayTime.place(relx=0.5, rely=0.4, anchor='n')
-displayDay.place(relx=0.5, rely=0.55, anchor='n')
+#displayTime.place(relx=0.5, rely=0.4, anchor='n')
+#displayDay.place(relx=0.5, rely=0.55, anchor='n')
 
 while (True):
 	a = datetime.now()
