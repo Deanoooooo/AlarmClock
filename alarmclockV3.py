@@ -26,11 +26,11 @@ def getTimeAndDate():
 	md = month + " " + day
 	return (t, md)
 
-nothing = 1
-a = datetime.now()
-(t, md) = getTimeAndDate()
-tHour = int(a.strftime("%H"))
+def filler():
+	nothing = 1
 
+
+(t, md) = getTimeAndDate()
 T= StringVar()
 MD= StringVar()
 T.set(t)
@@ -46,8 +46,8 @@ while (True):
 	(t, md) = getTimeAndDate()
 	tHour = int(a.strftime("%H"))
 
-	T= StringVar()
-	MD= StringVar()
+	#T= StringVar()
+	#MD= StringVar()
 	T.set(t)
 	MD.set(md)
 
@@ -67,6 +67,6 @@ while (True):
 	displayTime =  Label(root, textvariable=T, font=("Verdana",112), fg="#e6e6e6", bg=hrcolor)
 	displayDay = Label(root, textvariable=MD, font=("Verdana",60), fg="#e6e6e6", bg=hrcolor)
 	root.configure(background=hrcolor)
-	root.after(500, nothing=1)
+	root.after(500, filler())
 		
 
