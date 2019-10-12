@@ -26,16 +26,34 @@ def getTimeAndDate():
 	md = month + " " + day
 	return (t, md)
 
+
+
+
+
+
+
+
+a = datetime.now()
+(t, md) = getTimeAndDate()
+tHour = int(a.strftime("%H"))
+T= StringVar()
+MD= StringVar()
+T.set(t)
+MD.set(md)
+hrcolor = "#e6e6e6"
+displayTime =  Label(root, textvariable=T, font=("Verdana",112), fg="#e6e6e6", bg=hrcolor)
+displayDay = Label(root, textvariable=MD, font=("Verdana",60), fg="#e6e6e6", bg=hrcolor)
+displayTime.place(relx=0.5, rely=0.4, anchor='n')
+displayDay.place(relx=0.5, rely=0.55, anchor='n')
+
 while (True):
 	a = datetime.now()
 	(t, md) = getTimeAndDate()
 	tHour = int(a.strftime("%H"))
-
 	T= StringVar()
 	MD= StringVar()
 	T.set(t)
 	MD.set(md)
-
 	if tHour >= 6 and tHour <= 8:
 		hrcolor = "#707fd1"
 	elif tHour >= 9 and tHour <= 11:
@@ -51,8 +69,8 @@ while (True):
 
 	displayTime =  Label(root, textvariable=T, font=("Verdana",112), fg="#e6e6e6", bg=hrcolor)
 	displayDay = Label(root, textvariable=MD, font=("Verdana",60), fg="#e6e6e6", bg=hrcolor)
-	displayTime.place(relx=0.5, rely=0.4, anchor='n')
-	displayDay.place(relx=0.5, rely=0.55, anchor='n')
+	#displayTime.place(relx=0.5, rely=0.4, anchor='n')
+	#displayDay.place(relx=0.5, rely=0.55, anchor='n')
 	#displayTime.pack()
 	#displayDay.pack()
 	print('Did something! ' + str(T) + ' ' + str(MD))
