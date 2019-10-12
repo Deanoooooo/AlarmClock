@@ -26,30 +26,13 @@ def getTimeAndDate():
 	md = month + " " + day
 	return (t, md)
 
-def filler():
-	nothing = 1
-
-
-(t, md) = getTimeAndDate()
-T=StringVar()
-MD=StringVar()
-T.set(t)
-MD.set(md)
-displayTime =  Label(root, textvariable=T, font=("Verdana",112), fg="#e6e6e6", bg="#e6e6e6")
-displayDay = Label(root, textvariable=MD, font=("Verdana",60), fg="#e6e6e6", bg="#e6e6e6")
-displayTime.pack()
-displayDay.pack()
-
-#displayTime.place(relx=0.5, rely=0.4, anchor='n')
-#displayDay.place(relx=0.5, rely=0.55, anchor='n')
-
 while (True):
 	a = datetime.now()
 	(t, md) = getTimeAndDate()
 	tHour = int(a.strftime("%H"))
 
-	#T= StringVar()
-	#MD= StringVar()
+	T= StringVar()
+	MD= StringVar()
 	T.set(t)
 	MD.set(md)
 
@@ -68,7 +51,12 @@ while (True):
 
 	displayTime =  Label(root, textvariable=T, font=("Verdana",112), fg="#e6e6e6", bg=hrcolor)
 	displayDay = Label(root, textvariable=MD, font=("Verdana",60), fg="#e6e6e6", bg=hrcolor)
+	displayTime.place(relx=0.5, rely=0.4, anchor='n')
+	displayDay.place(relx=0.5, rely=0.55, anchor='n')
+	#displayTime.pack()
+	#displayDay.pack()
+	print('Did something! ' + str(T) + ' ' + str(MD))
 	root.configure(background=hrcolor)
-	root.after(500, filler())
-		
+	root.after(1000, root.update())
+
 
