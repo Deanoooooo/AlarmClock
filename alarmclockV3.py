@@ -67,6 +67,6 @@ while (True):
 	#print('Did something! ' + str(T) + ' ' + str(MD))
 	root.configure(background=hrcolor)
 	root.after(5000, root.update())
-
+#
 
 
