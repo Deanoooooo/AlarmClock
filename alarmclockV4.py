@@ -71,6 +71,6 @@ def tick():
 
 tick()
 root.mainloop()
-
+#
 
 
