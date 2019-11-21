@@ -7,6 +7,7 @@ else:
 from datetime import datetime
 import time
 
+
 # Morning (6-8), Early (9-11), Day (12-4), Late(5-7), Evening(8-10), Night(11-5)
 #      (6-8)         (9-11)      (12-16)    (17-19)      (20-22)       (23-5)
 #     #707fd1       #5162c6      #3b4db1    #314091     #273270       #1d2450
@@ -27,12 +28,6 @@ def getTimeAndDate():
 	return (t, md)
 
 
-
-
-
-
-
-
 a = datetime.now()
 (t, md) = getTimeAndDate()
 tHour = int(a.strftime("%H"))
@@ -40,7 +35,7 @@ T= StringVar()
 MD= StringVar()
 T.set(t)
 MD.set(md)
-hrcolor = "#e6e6e6"
+hrcolor = "#000000"
 displayTime =  Label(root, textvariable=T, font=("Verdana",112), fg="#e6e6e6", bg=hrcolor)
 displayDay = Label(root, textvariable=MD, font=("Verdana",60), fg="#e6e6e6", bg=hrcolor)
 displayTime.place(relx=0.5, rely=0.4, anchor='n')
@@ -66,15 +61,12 @@ while (True):
 		hrcolor = "#273270"
 	elif tHour == 23 or tHour == 24 or (tHour >= 0 and tHour <= 5):
 		hrcolor = "#1d2450"
-
-	displayTime =  Label(root, textvariable=T, font=("Verdana",112), fg="#e6e6e6", bg=hrcolor)
-	displayDay = Label(root, textvariable=MD, font=("Verdana",60), fg="#e6e6e6", bg=hrcolor)
-	#displayTime.place(relx=0.5, rely=0.4, anchor='n')
-	#displayDay.place(relx=0.5, rely=0.55, anchor='n')
-	#displayTime.pack()
-	#displayDay.pack()
-	print('Did something! ' + str(T) + ' ' + str(MD))
+		
+	displayTime.config(textvariable=T, bg=hrcolor)
+	displayDay.config(textvariable=MD, bg=hrcolor)
+	#print('Did something! ' + str(T) + ' ' + str(MD))
 	root.configure(background=hrcolor)
-	root.after(1000, root.update())
+	root.after(5000, root.update())
+
 
 
